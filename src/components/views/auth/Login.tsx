@@ -100,13 +100,15 @@ const Login = ({ isLogin, setIsLogin }: any) => {
                 )}
               />
               <button
-                className="w-full py-2 rounded text-white bg-blue-500"
+                className="w-full py-2 flex text-base items-center justify-center rounded text-center text-white bg-blue-500"
                 type="submit"
               >
                 {isLoading ? (
-                  <RiLoader4Fill className="w-3.5 h-3.5 justify-self-end animate-spin" />
+                  <span>
+                    <RiLoader4Fill className="w-6 h-6 justify-self-end animate-spin" />
+                  </span>
                 ) : (
-                  "Log In"
+                  <span>Log In</span>
                 )}
               </button>
             </form>

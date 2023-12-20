@@ -9,10 +9,6 @@ const getUserSessionData = async () => {
         data: { session },
       } = await supabase.auth.getSession();
   
-      if (!session) {
-        redirect("/");
-      }
-  
       return { session };
     } catch (error) {
       redirect("/");

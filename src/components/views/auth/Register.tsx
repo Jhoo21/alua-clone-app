@@ -207,13 +207,15 @@ const Register = ({ isLogin, setIsLogin }: any) => {
                 )}
               />
               <button
-                className="w-full text-white font-semibold bg-blue-500 py-2 rounded"
+                className="w-full text-white flex justify-center items-center font-semibold text-center bg-blue-500 py-2 rounded"
                 type="submit"
               >
                 {isLoading ? (
-                  <RiLoader4Fill className="w-3.5 h-3.5 justify-self-end animate-spin" />
+                  <span>
+                    <RiLoader4Fill className="w-6 h-6 justify-self-end animate-spin" />
+                  </span>
                 ) : (
-                  "Sign Up"
+                  <span>Sign Up</span>
                 )}
               </button>
             </form>

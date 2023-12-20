@@ -4,8 +4,8 @@ import { getUserSessionData } from "@/services/getUserSession";
 import { redirect } from "next/navigation";
 import FooterPage from "@/components/views/dashboard/FooterPage";
 
-const DashboardPage = () => {
-  const { session }: any = getUserSessionData();
+const DashboardPage = async () => {
+  const { session }: any = await getUserSessionData();
   if (session) {
     redirect("/discover");
   }
