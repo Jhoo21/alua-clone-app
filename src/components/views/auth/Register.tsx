@@ -206,8 +206,8 @@ const Register = ({ isLogin, setIsLogin }: any) => {
                   </FormItem>
                 )}
               />
-              <Button
-                className="w-full text-white bg-blue-400 hover:text-blue-500"
+              <button
+                className="w-full text-white font-semibold bg-blue-500 py-2 rounded"
                 type="submit"
               >
                 {isLoading ? (
@@ -215,14 +215,16 @@ const Register = ({ isLogin, setIsLogin }: any) => {
                 ) : (
                   "Sign Up"
                 )}
-              </Button>
+              </button>
             </form>
             <div className="text-center">
-              <p className="text-xs text-gray-600">
+              <p className="text-xs text-gray-600 mt-2">
                 By signing up you agree to our{" "}
-                <span className="text-blue-500">Terms and Conditions</span>
+                <span className="text-blue-500 font-semibold">
+                  Terms and Conditions
+                </span>
               </p>
-              <p className="text-sm my-4">
+              <p className="text-sm my-4 font-semibold">
                 Already a member?{" "}
                 <span
                   onClick={() => setIsLogin(!isLogin)}

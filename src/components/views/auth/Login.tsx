@@ -17,6 +17,8 @@ import { authService } from "@/services/authServices";
 import { Toaster, toast } from "sonner";
 import { RiLoader4Fill } from "react-icons/ri";
 import { useRouter } from "next/navigation";
+import { FaFacebook } from "react-icons/fa";
+import { FaTwitter } from "react-icons/fa";
 
 const formSchema = z.object({
   email: z
@@ -63,7 +65,7 @@ const Login = ({ isLogin, setIsLogin }: any) => {
       <CardForm
         formField={
           <Form {...form}>
-            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-2">
+            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
               <FormField
                 control={form.control}
                 name="email"
@@ -97,8 +99,8 @@ const Login = ({ isLogin, setIsLogin }: any) => {
                   </FormItem>
                 )}
               />
-              <Button
-                className="w-full text-white bg-blue-400 hover:text-blue-500"
+              <button
+                className="w-full py-2 rounded text-white bg-blue-500"
                 type="submit"
               >
                 {isLoading ? (
@@ -106,15 +108,27 @@ const Login = ({ isLogin, setIsLogin }: any) => {
                 ) : (
                   "Log In"
                 )}
-              </Button>
+              </button>
             </form>
             <div className="text-center">
-              <p className="text-xs text-blue-500">Forgot Password</p>
-              <p className="text-sm my-4">
+              <button>
+                <p className="text-sm mt-2 font-semibold text-blue-600">
+                  Forgot Password
+                </p>
+              </button>
+              <div className="my-4 flex justify-center items-center w-full gap-4">
+                <button className="rounded-sm px-3 gap-1 py-1 flex items-center bg-blue-600 text-white">
+                  <FaFacebook /> <p>Log In</p>
+                </button>
+                <button className="rounded-sm px-3 gap-1 py-1 flex items-center bg-blue-500 text-white">
+                  <FaTwitter /> <p>Log In</p>
+                </button>
+              </div>
+              <p className="text-sm my-4 font-semibold">
                 Don&apos;t have an account?{" "}
                 <span
                   onClick={() => setIsLogin(!isLogin)}
-                  className="text-blue-500 cursor-pointer"
+                  className="text-blue-500 cursor-pointer font-semibold"
                 >
                   Sign Up
                 </span>
